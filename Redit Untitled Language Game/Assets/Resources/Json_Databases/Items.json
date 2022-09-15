@@ -1,0 +1,19 @@
+[
+  {
+    "ID": -1,
+    "Name": "No Item",
+    "Slug": ""
+  },
+  {
+    "ID": 0,
+    "Name": "Fjäril",
+    "Slug": "_fjaril"
+
+  },
+  {
+    "ID": 1,
+    "Name": "Blå Fjäril",
+    "Slug": "_bla_fjaril"
+
+  }
+]

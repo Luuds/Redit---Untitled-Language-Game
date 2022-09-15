@@ -1,0 +1,30 @@
+[
+  {
+    "ID": -1,
+    "Name": "No Hotspot",
+    "Slug": "",
+    "ItemAcceptList": [ -1 ]
+
+  },
+  {
+    "ID": 0,
+    "Name": "Kiosk",
+    "Slug": "_kiosk",
+    "ItemAcceptList": [ 0 ]
+
+  },
+  {
+    "ID": 1,
+    "Name": "Kiosken",
+    "Slug": "_kiosken",
+    "ItemAcceptList": [ 0]
+
+  },
+  {
+    "ID": 2,
+    "Name": "Kiosken3",
+    "Slug": "_kiosken3",
+    "ItemAcceptList": [ 0 ]
+
+  }
+]

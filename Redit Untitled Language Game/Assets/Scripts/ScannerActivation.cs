@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class ScannerActivation : MonoBehaviour
 {
+    EnvironmentHotspotDatabaseCreator environmentHotspotDatabase;
+    GameObject environment;
+    [HideInInspector]public bool scanning = false; 
     // Start is called before the first frame update
     void Start()
     {
-        
+        environment = GameObject.FindGameObjectWithTag("Environment"); 
     }
 
+   public void ScanOnorOff() {
+        if (!scanning) 
+        {
+            environment.BroadcastMessage("ScanTriggered");
+            scanning = true; 
+        }
+        else { environment.BroadcastMessage("ScanUnTriggered");
+            scanning = false;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
