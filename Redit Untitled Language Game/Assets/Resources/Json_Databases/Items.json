@@ -7,13 +7,13 @@
   {
     "ID": 0,
     "Name": "Fjäril",
-    "Slug": "_fjaril"
+    "Slug": "_item_butterfly"
 
   },
   {
     "ID": 1,
     "Name": "Blå Fjäril",
-    "Slug": "_bla_fjaril"
+    "Slug": "_item_butterfly_blue"
 
   }
 ]

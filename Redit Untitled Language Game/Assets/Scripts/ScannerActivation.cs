@@ -6,11 +6,13 @@ public class ScannerActivation : MonoBehaviour
 {
     EnvironmentHotspotDatabaseCreator environmentHotspotDatabase;
     GameObject environment;
-    [HideInInspector]public bool scanning = false; 
+    GameController gameController;
+    private bool scanning = false; 
     // Start is called before the first frame update
     void Start()
     {
-        environment = GameObject.FindGameObjectWithTag("Environment"); 
+        environment = GameObject.FindGameObjectWithTag("Environment");
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
    public void ScanOnorOff() {
@@ -26,6 +28,6 @@ public class ScannerActivation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameController.scanning = scanning;
     }
 }

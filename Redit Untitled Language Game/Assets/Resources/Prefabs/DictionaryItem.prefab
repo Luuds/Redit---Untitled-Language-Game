@@ -147,9 +147,9 @@ GameObject:
   - component: {fileID: 6769192072376874437}
   - component: {fileID: 6769192072376874438}
   - component: {fileID: 6769192072376874439}
-  - component: {fileID: 6769192072376874436}
+  - component: {fileID: 3880516715578989383}
   m_Layer: 5
-  m_Name: InventoryItem
+  m_Name: DictionaryItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6769192072376874436
+--- !u!114 &3880516715578989383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,13 +223,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6769192072376874434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962e2582a3f7d464aac59cb14b906b85, type: 3}
+  m_Script: {fileID: 11500000, guid: ff9a0e0c80653b44e864da4babc83d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAfterDrag: {fileID: 0}
-  itemImage: {fileID: 0}
-  itemPlaceNumber: 0
-  itemID: 0
-  itemAmount: 0
-  itemName: 
-  itemSlug: 
+  dictionaryPanel: {fileID: 9062570117372819436, guid: 039a2b754db1bbf428117c86c2d53ad9,
+    type: 3}

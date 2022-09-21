@@ -7,6 +7,7 @@ using System.IO;
 
 public class EnvironmentHotspotDatabaseCreator : MonoBehaviour {
 	public List<Hotspot> database = new List<Hotspot> (); 
+	GameController gameController;
 	private JsonData hotspotData;
 
 	// Use this for initialization
@@ -15,7 +16,14 @@ public class EnvironmentHotspotDatabaseCreator : MonoBehaviour {
         //path = Application.dataPath + "/StreamingAssets/Inventorys.json";
         hotspotData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Resources/Json_Databases/EnvironmentHotspots.json", System.Text.Encoding.UTF7));
 		//hotspotData = JsonMapper.ToObject (File.ReadAllText(path +"/Hotspots.json")); 
-		ConstructHotspotDatabase (); 
+		gameController= GetComponent<GameController>();
+		ConstructHotspotDatabase ();
+        for (int i = 0; i < database.Count; i++)
+        {
+			gameController.wordsFound.Add(0); 
+
+		}
+		
 	}
 
 	public void ConstructHotspotDatabase(){
@@ -24,11 +32,15 @@ public class EnvironmentHotspotDatabaseCreator : MonoBehaviour {
 			
 			for (int k = 0; k < hotspotData [i] ["ItemAcceptList"].Count; k++) {
 				itemAcceptList.Add ((int)hotspotData [i] ["ItemAcceptList"] [k]); 
-			
-				
+
 			}
-			
 			database.Add (new Hotspot ((int)hotspotData[i]["ID"],hotspotData[i]["Name"].ToString(),hotspotData[i]["Slug"].ToString(), itemAcceptList)); 
+		}
+		
+        for (int i = 0; i < database.Count; i++)
+        {
+			gameController.environmentHotspotScanned.Add(0); 
+
 		}
 	}
 	public Hotspot FetchHotspotByTitle(string name){

@@ -1,3 +1,24 @@
-{
+[
+  {
+    "ID": -1,
+    "Name": "No Word",
+    "Slug": "_word",
+    "Type": "Null",
+    "Description": ""
+  },
+  {
+    "ID": 0,
+    "Name": "Kiosk",
+    "Slug": "_word_kiosk",
+    "Type": "Platser",
+    "Description": "Plats där man kan köpa korv, ibland glass och annat."
 
-}
+  },
+  {
+    "ID": 1,
+    "Name": "Blå Fjäril",
+    "Slug": "_bla_fjaril",
+    "Type": "Natur",
+    "Description": ""
+  }
+]

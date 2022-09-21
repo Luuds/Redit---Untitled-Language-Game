@@ -57,12 +57,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _Holo: 0
-    - _HoloStrength: 0.535
+    - _HoloStrength: 0.426
     - _QueueControl: 0
     - _QueueOffset: 11
-    - _Saturation: 0.401
-    - _ScanEffect: 0.85
-    - _Scanning: 0
+    - _Saturation: 0.605
+    - _ScanEffect: 0
+    - _Scanned: 0
+    - _Scanning: 1
     - _Scrollspeed: 1.11
     - _SineTimeScan: 0
     - _Skew: 0.3
