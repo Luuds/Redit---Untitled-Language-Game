@@ -15,7 +15,7 @@ public class InventoryOpenClose : MonoBehaviour
     Image image;
     public  Sprite bagOpen;
     public Sprite bagClosed;
-    bool open = false;
+    public bool open = false;
 
     void Start()
     {
@@ -53,6 +53,7 @@ public class InventoryOpenClose : MonoBehaviour
                
             }
            open = true;
+            gameController.inventoryOpen = true; 
             GetComponent<Image>().sprite = bagOpen; 
         }
         else {
@@ -60,6 +61,7 @@ public class InventoryOpenClose : MonoBehaviour
             Destroy(tempInvMenu);
             tempInvMenu = null;
             open = false;
+            gameController.inventoryOpen = false;
             GetComponent<Image>().sprite = bagClosed;
             EventSystem.current.SetSelectedGameObject(null);
         }

@@ -14,7 +14,7 @@ public class EnvironmentHotspotDatabaseCreator : MonoBehaviour {
 	void Awake () {
 
         //path = Application.dataPath + "/StreamingAssets/Inventorys.json";
-        hotspotData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Resources/Json_Databases/EnvironmentHotspots.json", System.Text.Encoding.UTF7));
+        hotspotData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Json_Databases/EnvironmentHotspots.json", System.Text.Encoding.UTF7));
 		//hotspotData = JsonMapper.ToObject (File.ReadAllText(path +"/Hotspots.json")); 
 		gameController= GetComponent<GameController>();
 		ConstructHotspotDatabase ();

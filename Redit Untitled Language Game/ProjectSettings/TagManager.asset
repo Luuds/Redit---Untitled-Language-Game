@@ -8,6 +8,8 @@ TagManager:
   - Scannable
   - Environment
   - Robot
+  - Canvas
+  - PickUpItem
   layers:
   - Default
   - TransparentFX

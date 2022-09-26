@@ -58,8 +58,8 @@ public class DraggableItem : MonoBehaviour , IDragHandler,IBeginDragHandler,IEnd
             {
                 Debug.Log("Destroy!");
                 Destroy(parentAfterDrag.gameObject);
-                gameController.inventoryItemID.Remove(itemPlaceNumber);
-                gameController.inventoryItemAmount.Remove(itemPlaceNumber);
+                gameController.inventoryItemID.Remove(itemID);
+               gameController.inventoryItemAmount.Remove(itemID);
                 Destroy(this.gameObject);
             }
             else

@@ -1,0 +1,48 @@
+[
+  {
+    "ID": -1,
+    "Name": "No Word",
+    "Slug": "_word",
+    "Type": "Null",
+    "Description": ""
+  },
+  {
+    "ID": 0,
+    "Name": "Korv Kiosk",
+    "Slug": "_word_kiosk",
+    "Type": "Platser",
+    "Description": "Plats där man kan köpa korv, ibland glass och annat."
+
+  },
+  {
+    "ID": 1,
+    "Name": "Buske",
+    "Slug": "_word_buske",
+    "Type": "Natur",
+    "Description": "En växt, med hård stam men mindre än ett träd."
+  },
+  {
+    "ID": 2,
+    "Name": "Träd: Gran",
+    "Slug": "_word_gran",
+    "Type": "Natur",
+    "Description": "Ett stort barrträd."
+
+  },
+  {
+    "ID": 3,
+    "Name": "Roskis",
+    "Slug": "_word_roskis",
+    "Type": "Saker",
+    "Description": "Behållare som man kan slänga sitt skräp i."
+  },
+
+  {
+    "ID": 4,
+    "Name": "Bensin Station",
+    "Slug": "_word_gas_station",
+    "Type": "Platser",
+    "Description": "Ställe där man kan tanka sin bil och köpa allt möjligt."
+
+  }
+]

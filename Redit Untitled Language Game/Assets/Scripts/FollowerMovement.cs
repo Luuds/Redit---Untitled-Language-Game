@@ -13,15 +13,16 @@ public class FollowerMovement : MonoBehaviour
     GameController gameController;
     //bool rotate = false;
     GameObject tempScanPos;
-
+    int layerMask;
     // Start is called before the first frame update
     void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         myAgent = GetComponent<NavMeshAgent>();
-        InvokeRepeating("DistanceCheck", 0, 0.5f); 
-        
-       
+        InvokeRepeating("DistanceCheck", 0, 0.1f);
+
+        layerMask = 1 << 6;
+        layerMask = ~layerMask;
     }
     void DistanceCheck ()
     {
@@ -41,7 +42,7 @@ public class FollowerMovement : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit);
-            if (hit.collider.CompareTag("Scannable")) 
+            if (hit.collider.CompareTag("Scannable"))
             {
                 GameObject tempHotspotObj = hit.collider.gameObject;
                 tempScanPos = tempHotspotObj.transform.GetChild(0).gameObject;
@@ -49,8 +50,18 @@ public class FollowerMovement : MonoBehaviour
                 tempHotspotObj.GetComponent<EnvironmentHotspot>().isBeingScanned = true;
                 //rotate = true;
             }
+            else 
+            {
+                ray = cam.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+                {
+                    myAgent.SetDestination(hit.point);
+
+                }
+            }
         }
-        if (gameController.scanning && tempScanPos != null) { FaceTarget();  }
+    // if (gameController.scanning && tempScanPos != null) { FaceTarget();  }
 
     }
     void FaceTarget()
@@ -58,7 +69,7 @@ public class FollowerMovement : MonoBehaviour
         var turnTowardNavSteeringTarget = myAgent.steeringTarget;
 
         Vector3 direction = (turnTowardNavSteeringTarget - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0, direction.y, direction.z));
         Quaternion scanPosRot = tempScanPos.transform.rotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
 

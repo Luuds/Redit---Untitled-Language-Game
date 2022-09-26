@@ -1,0 +1,20 @@
+[
+  {
+    "ID": -1,
+    "Name": "No Item",
+    "Slug": ""
+  },
+  
+  {
+    "ID": 0,
+    "Name": "Blå Fjäril",
+    "Slug": "_item_butterfly_blue"
+
+  },
+  {
+    "ID": 1,
+    "Name": "Skräp",
+    "Slug": "_item_trash"
+
+  }
+]

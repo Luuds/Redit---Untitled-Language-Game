@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: 4079191009520072956}
   - component: {fileID: 4079191009520072958}
   m_Layer: 5
-  m_Name: "K\xE4nslor"
+  m_Name: Saker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

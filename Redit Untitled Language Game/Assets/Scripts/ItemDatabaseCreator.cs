@@ -13,7 +13,7 @@ public class ItemDatabaseCreator : MonoBehaviour {
 	{
 
        
-		itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Resources/Json_Databases/Items.json", System.Text.Encoding.UTF7));
+		itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Json_Databases/Items.json", System.Text.Encoding.UTF7));
 		ConstructItemDatabase (); 
 
 	
@@ -27,6 +27,17 @@ public class ItemDatabaseCreator : MonoBehaviour {
 				
 			
 			return null;
+
+	}
+	public Item FetchItemBySlug(string slug)
+	{
+
+		for (int i = 0; i < database.Count; i++)
+			if (database[i].Slug == slug)
+				return database[i];
+
+
+		return null;
 
 	}
 

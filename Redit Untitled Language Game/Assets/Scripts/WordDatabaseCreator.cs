@@ -14,7 +14,7 @@ public class WordDatabaseCreator : MonoBehaviour
 		gameController = GetComponent<GameController>();
 
 
-		wordData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Resources/Json_Databases/Words.json", System.Text.Encoding.UTF7));
+		wordData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Json_Databases/Words.json", System.Text.Encoding.UTF7));
 		ConstructWordDatabase();
 	
 

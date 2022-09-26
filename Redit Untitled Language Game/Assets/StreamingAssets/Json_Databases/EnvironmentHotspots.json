@@ -1,0 +1,44 @@
+[
+  {
+    "ID": -1,
+    "Name": "No Hotspot",
+    "Slug": "",
+    "ItemAcceptList": [ -1 ]
+
+  },
+  {
+    "ID": 0,
+    "Name": "Korv Kiosk",
+    "Slug": "_korv_kiosk",
+    "ItemAcceptList": [ -1 ]
+
+  },
+  {
+    "ID": 1,
+    "Name": "Träd: Gran",
+    "Slug": "_spruce_tree",
+    "ItemAcceptList": [ -1 ]
+
+  },
+  {
+    "ID": 2,
+    "Name": "Roskis",
+    "Slug": "_trash_can",
+    "ItemAcceptList": [ 1 ]
+
+  },
+  {
+    "ID": 3,
+    "Name": "Buske",
+    "Slug": "_bush",
+    "ItemAcceptList": [ -1 ]
+
+  },
+  {
+    "ID": 4,
+    "Name": "Bensin Station",
+    "Slug": "_gas_station",
+    "ItemAcceptList": [ -1 ]
+
+  }
+]

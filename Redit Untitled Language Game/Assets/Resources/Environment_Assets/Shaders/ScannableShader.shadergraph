@@ -995,7 +995,7 @@
     },
     "m_PreviewData": {
         "serializedMesh": {
-            "m_SerializedMesh": "{\"mesh\":{\"fileID\":10210,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
+            "m_SerializedMesh": "{\"mesh\":{\"fileID\":-4799694588983716911,\"guid\":\"85883783ac15edb449c7093f7bb3c272\",\"type\":3}}",
             "m_Guid": ""
         },
         "preventRotation": false
@@ -5502,7 +5502,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 50.0,
+    "m_Value": 205.6999969482422,
     "m_DefaultValue": 500.0,
     "m_Labels": []
 }
