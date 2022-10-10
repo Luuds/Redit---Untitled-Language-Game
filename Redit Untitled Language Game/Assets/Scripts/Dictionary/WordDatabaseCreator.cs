@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LitJson;
 using System.IO;
+using System;
 
 public class WordDatabaseCreator : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class WordDatabaseCreator : MonoBehaviour
 
 		wordData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Json_Databases/Words.json", System.Text.Encoding.UTF7));
 		ConstructWordDatabase();
-	
 
+		Debug.Log("Database count:" + database.Count.ToString()); 
 
 	}
 	public Word FetchWordByTitle(string name)
@@ -45,26 +46,48 @@ public class WordDatabaseCreator : MonoBehaviour
 	}
 	public List <Word> FetchWordListByType(string type)
 	{
+		
+
+		//Debug.Log(database[1].Type.Count);
 		List<Word> words = new List<Word>();
 		for (int i = 0; i < database.Count; i++)
 		{
-			if (database[i].Type == type) 
+			for (int j = 0; j < database[i].Type.Count; j++)
 			{
-				words.Add(database[i]);
-			}
+				if (database[i].Type[j] == type)
+				{
+					
+					//Debug.Log(database[i].Type[j]);
+					words.Add(database[i]);
+					continue; 
+				
 
+				}
+			
+			}
 		}
 		SortWordByName sortWordByName = new SortWordByName();
 		words.Sort(sortWordByName);
+		
 		return words;
 
 	}
 
 	void ConstructWordDatabase()
 	{
+		
+		
 		for (int i = 0; i < wordData.Count; i++)
 		{
-			database.Add(new Word((int)wordData[i]["ID"], wordData[i]["Name"].ToString(), wordData[i]["Slug"].ToString(), wordData[i]["Type"].ToString(), wordData[i]["Description"].ToString()));
+			List<string> types = new List<string>();
+
+			for (int k= 0; k < wordData[i]["Type"].Count ; k++)
+            {
+				
+				types.Add(wordData[i]["Type"][k].ToString());
+			}
+
+			database.Add(new Word((int)wordData[i]["ID"], wordData[i]["Name"].ToString(), wordData[i]["Slug"].ToString(), types, wordData[i]["Description"].ToString()));
 			gameController.wordsFound.Add(0); 
 		}
 	}
@@ -82,13 +105,13 @@ public class Word
 	public int ID { get; set; }
 	public string Name { get; set; }
 	public string Slug { get; set; }
-	public string Type { get; set; }
+	public List <string> Type { get; set; }
 	public string Description { get; set; }
 	public Sprite Sprite { get; set; }
 
 
 
-	public Word(int id, string name, string slug, string type, string description)
+	public Word(int id, string name, string slug, List <string>type, string description)
 	{
 
 		this.ID = id;
